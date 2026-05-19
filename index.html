@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echo Bike Tracker — Support</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:      #050F05;
+      --bg-card: #0d1a0d;
+      --border:  #1a2e1a;
+      --green:   #3DFF4F;
+      --green-dim: rgba(61,255,79,0.08);
+      --text:    #C8D8C8;
+      --text-sec:#8FA88F;
+      --text-mut:#4a634a;
+    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.6; }
+
+    nav { border-bottom: 1px solid var(--border); padding: 0 24px; }
+    nav .inner { max-width: 680px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 52px; }
+    .brand { font-size: 14px; font-weight: 800; color: var(--green); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; }
+    nav a { font-size: 13px; color: var(--text-sec); text-decoration: none; }
+    nav a:hover { color: var(--green); }
+
+    .page { max-width: 680px; margin: 0 auto; padding: 64px 24px 96px; }
+
+    .hero { text-align: center; margin-bottom: 64px; }
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+    h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 900; color: #fff; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+    .subtitle { font-size: 17px; color: var(--text-sec); max-width: 480px; margin: 0 auto; }
+
+    .badge { display: inline-block; margin-top: 28px; background: var(--green-dim); border: 1px solid rgba(61,255,79,0.25); border-radius: 999px; padding: 8px 20px; font-size: 13px; color: var(--green); font-weight: 600; }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 48px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+    .card-icon { font-size: 28px; margin-bottom: 12px; }
+    .card h3 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .card p { font-size: 14px; color: var(--text-sec); line-height: 1.6; }
+
+    .contact { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 32px; text-align: center; margin-bottom: 48px; }
+    .contact h2 { font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .contact p { font-size: 15px; color: var(--text-sec); margin-bottom: 20px; }
+    .contact a { color: var(--green); text-decoration: none; font-weight: 600; font-size: 16px; }
+    .contact a:hover { text-decoration: underline; }
+
+    .links { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .link-btn { display: inline-block; padding: 10px 22px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-sec); text-decoration: none; font-size: 13px; font-weight: 600; transition: border-color 0.15s, color 0.15s; }
+    .link-btn:hover { border-color: var(--green); color: var(--green); }
+
+    footer { border-top: 1px solid var(--border); padding-top: 24px; font-size: 12px; color: var(--text-mut); text-align: center; }
+    footer a { color: var(--text-sec); text-decoration: none; }
+    footer a:hover { color: var(--green); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="/">Echo Bike Tracker</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="hero">
+    <div class="eyebrow">iOS App</div>
+    <h1>Echo Bike Tracker</h1>
+    <p class="subtitle">Real-time power, zones, and training metrics for your Rogue Echo Bike. No subscription. No account.</p>
+    <span class="badge">Available on the App Store</span>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Live Power Metrics</h3>
+      <p>Connect via Bluetooth and see watts, cadence, speed, and heart rate in real time with colour-coded power zones.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Training Analytics</h3>
+      <p>TSS, Normalized Power, Intensity Factor, VO₂max, and Chronic Training Load — all calculated on-device.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏋️</div>
+      <h3>Structured Workouts</h3>
+      <p>Built-in HIIT, Threshold, and VO₂ Max sessions. Build custom intervals or generate AI training plans.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔗</div>
+      <h3>Export Everywhere</h3>
+      <p>Sync to Google Sheets, intervals.icu, or Strava automatically after every ride.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <h3>Private by Design</h3>
+      <p>All data stays on your device. No analytics, no ads, no account required. Ever.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>iPhone & iPad</h3>
+      <p>Optimised for both. Mirror to Apple TV via AirPlay for a big-screen display during your ride.</p>
+    </div>
+  </div>
+
+  <div class="contact">
+    <h2>Support</h2>
+    <p>Questions, bug reports, or feedback — get in touch directly.</p>
+    <a href="mailto:richiebolger@me.com">richiebolger@me.com</a>
+  </div>
+
+  <div class="links">
+    <a class="link-btn" href="privacy-policy.html">Privacy Policy</a>
+    <a class="link-btn" href="mailto:richiebolger@me.com">Contact</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Richie Bolger &nbsp;·&nbsp; Echo Bike Tracker &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>
