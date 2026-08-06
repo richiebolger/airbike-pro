@@ -32,6 +32,7 @@
       min-height: 100vh;
     }
 
+    /* ── Nav ── */
     nav {
       position: sticky;
       top: 0;
@@ -68,12 +69,14 @@
     }
     nav a:hover { color: var(--green); }
 
+    /* ── Layout ── */
     .page {
       max-width: 760px;
       margin: 0 auto;
       padding: 56px 24px 96px;
     }
 
+    /* ── Header ── */
     .hero {
       margin-bottom: 48px;
       padding-bottom: 32px;
@@ -101,7 +104,10 @@
     }
     .hero .meta span { color: var(--text-sec); }
 
-    section { margin-bottom: 48px; }
+    /* ── Sections ── */
+    section {
+      margin-bottom: 48px;
+    }
     h2 {
       font-size: 20px;
       font-weight: 800;
@@ -130,10 +136,14 @@
     p { margin-bottom: 14px; color: var(--text); }
     p:last-child { margin-bottom: 0; }
 
-    ul, ol { padding-left: 20px; margin-bottom: 14px; }
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
     li { margin-bottom: 6px; color: var(--text); }
     li::marker { color: var(--green); }
 
+    /* ── Highlight card ── */
     .card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -145,23 +155,46 @@
       border-color: rgba(61,255,79,0.3);
       background: var(--green-dim);
     }
-    .card.highlight p { color: #D8FFD8; font-weight: 500; }
+    .card.highlight p {
+      color: #D8FFD8;
+      font-weight: 500;
+    }
 
-    .service-grid { display: grid; gap: 12px; margin-top: 16px; }
+    /* ── Third-party table ── */
+    .service-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
     .service {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 16px 20px;
     }
-    .service-name { font-size: 14px; font-weight: 700; color: var(--cyan); margin-bottom: 4px; }
-    .service-desc { font-size: 14px; color: var(--text-sec); margin: 0; }
-    .service-cond { font-size: 12px; color: var(--text-muted); margin: 6px 0 0; font-style: italic; }
+    .service-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 4px;
+    }
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-sec);
+      margin: 0;
+    }
+    .service-cond {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 6px 0 0;
+      font-style: italic;
+    }
 
     strong { color: #fff; font-weight: 700; }
     a { color: var(--green); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
+    /* ── Contact ── */
     .contact-box {
       background: var(--bg-raised);
       border: 1px solid var(--border);
@@ -171,10 +204,12 @@
       flex-direction: column;
       gap: 8px;
     }
-    .contact-box .label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
+    .contact-box .label { font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--text-muted); }
     .contact-box .value { font-size: 16px; color: var(--text); }
     .contact-box .value a { color: var(--green); }
 
+    /* ── Footer ── */
     footer {
       margin-top: 72px;
       padding-top: 24px;
@@ -216,7 +251,7 @@
       Application: <span>AirBike Pro</span> &nbsp;|&nbsp;
       Bundle ID: <span>com.richiebolger.airbikepro</span><br>
       Developer: <span>Richie Bolger</span> &nbsp;|&nbsp;
-      Last updated: <span>27 May 2026</span>
+      Last updated: <span>26 June 2026</span>
     </p>
   </div>
 
@@ -228,11 +263,13 @@
     </p>
   </div>
 
+  <!-- 1. INTRODUCTION -->
   <section id="introduction">
     <h2><span class="icon">1</span> Introduction</h2>
     <p>
-      AirBike Pro is an iOS application that connects to a Rogue Echo Bike via Bluetooth
-      and records workout metrics including power output, cadence, speed, and optionally heart rate.
+      AirBike Pro is an iOS and iPadOS application that connects to Rogue Echo Bikes, AssaultBikes,
+      and any FTMS-compatible bike or treadmill via Bluetooth, and records workout metrics including
+      power output, cadence, speed, and optionally heart rate.
       This Privacy Policy explains what information the app accesses, how it is used, and your choices
       regarding that information.
     </p>
@@ -242,6 +279,7 @@
     </p>
   </section>
 
+  <!-- 2. DATA COLLECTED -->
   <section id="data-collected">
     <h2><span class="icon">2</span> What Data Is Collected</h2>
     <p>
@@ -251,7 +289,7 @@
     </p>
     <p>The following data is recorded locally on your device during use:</p>
     <ul>
-      <li><strong>Workout metrics</strong> — power (watts), cadence (RPM), speed, elapsed time, distance, and calories, as broadcast by the bike over Bluetooth.</li>
+      <li><strong>Workout metrics</strong> — power (watts), cadence (RPM), speed, elapsed time, distance, and calories, as broadcast by the Echo Bike over Bluetooth.</li>
       <li><strong>Heart rate</strong> — if you optionally connect a Bluetooth heart rate monitor.</li>
       <li><strong>Rider profile data</strong> — name, FTP (functional threshold power), weight, resting and maximum heart rate, entered voluntarily by you in the Profile tab.</li>
       <li><strong>Derived training metrics</strong> — Training Stress Score (TSS), Normalized Power (NP), Intensity Factor (IF), Chronic Training Load (CTL), and VO2max estimates, all calculated locally on your device.</li>
@@ -262,6 +300,7 @@
     </p>
   </section>
 
+  <!-- 3. STORAGE -->
   <section id="storage">
     <h2><span class="icon">3</span> Where Data Is Stored</h2>
     <p>
@@ -278,6 +317,7 @@
     </p>
   </section>
 
+  <!-- 4. THIRD-PARTY SERVICES -->
   <section id="third-party">
     <h2><span class="icon">4</span> Optional Third-Party Services</h2>
     <p>
@@ -288,6 +328,7 @@
     </p>
 
     <div class="service-grid">
+
       <div class="service">
         <div class="service-name">Google Sheets (via Google Apps Script)</div>
         <p class="service-desc">
@@ -324,6 +365,7 @@
         <p class="service-cond">Activated only after you authorize via Strava OAuth. Governed by
           <a href="https://www.strava.com/legal/privacy" target="_blank" rel="noopener">Strava's Privacy Policy</a>.</p>
       </div>
+
     </div>
 
     <div class="card">
@@ -334,6 +376,7 @@
     </div>
   </section>
 
+  <!-- 5. BLUETOOTH -->
   <section id="bluetooth">
     <h2><span class="icon">5</span> Bluetooth Usage</h2>
     <p>
@@ -359,6 +402,7 @@
     </p>
   </section>
 
+  <!-- 6. PHOTO LIBRARY -->
   <section id="photos">
     <h2><span class="icon">6</span> Photo Library Access</h2>
     <p>
@@ -378,6 +422,7 @@
     </p>
   </section>
 
+  <!-- 7. ANALYTICS & ADVERTISING -->
   <section id="analytics">
     <h2><span class="icon">7</span> Analytics, Advertising &amp; Tracking</h2>
     <p>
@@ -390,6 +435,7 @@
     </p>
   </section>
 
+  <!-- 8. NO SALE OF DATA -->
   <section id="no-sale">
     <h2><span class="icon">8</span> No Sale of Personal Data</h2>
     <p>
@@ -398,6 +444,7 @@
     </p>
   </section>
 
+  <!-- 9. CHILDREN -->
   <section id="children">
     <h2><span class="icon">9</span> Children's Privacy</h2>
     <p>
@@ -408,6 +455,7 @@
     </p>
   </section>
 
+  <!-- 10. DATA RETENTION -->
   <section id="retention">
     <h2><span class="icon">10</span> Data Retention &amp; Deletion</h2>
     <p>
@@ -421,6 +469,7 @@
     </p>
   </section>
 
+  <!-- 11. CHANGES -->
   <section id="changes">
     <h2><span class="icon">11</span> Changes to This Policy</h2>
     <p>
@@ -435,6 +484,7 @@
     </p>
   </section>
 
+  <!-- 12. CONTACT -->
   <section id="contact">
     <h2><span class="icon">12</span> Contact</h2>
     <p>
@@ -448,7 +498,7 @@
       </div>
       <div>
         <div class="label">Email</div>
-        <div class="value"><a href="mailto:richiebolger@me.com">richiebolger@me.com</a></div>
+        <div class="value"><a href="mailto:info@airbikepro.com">info@airbikepro.com</a></div>
       </div>
       <div>
         <div class="label">App</div>
@@ -457,11 +507,11 @@
     </div>
   </section>
 
-</div>
+</div><!-- /page -->
 
 <footer>
   &copy; 2026 Richie Bolger &nbsp;&middot;&nbsp; AirBike Pro &nbsp;&middot;&nbsp;
-  Privacy Policy last updated 27 May 2026<br>
+  Privacy Policy last updated 26 June 2026<br>
   <a href="#top">Back to top &uarr;</a>
 </footer>
 
