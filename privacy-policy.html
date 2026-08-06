@@ -1,494 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — AirBike Pro</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:        #050F05;
-      --bg-card:   #0B1C0B;
-      --bg-raised: #102510;
-      --border:    #1E3D1E;
-      --green:     #3DFF4F;
-      --green-dim: rgba(61,255,79,0.08);
-      --text:      #D8FFD8;
-      --text-sec:  #6AAF6A;
-      --text-muted:#3A6E3A;
-      --orange:    #FF6B35;
-      --cyan:      #00D4FF;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      min-height: 100vh;
-    }
-
-    /* ── Nav ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(5,15,5,0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-    }
-    nav .inner {
-      max-width: 760px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      height: 52px;
-      flex-wrap: wrap;
-    }
-    nav .brand {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--green);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-    nav a {
-      font-size: 13px;
-      color: var(--text-sec);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: color 0.15s;
-    }
-    nav a:hover { color: var(--green); }
-
-    /* ── Layout ── */
-    .page {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 56px 24px 96px;
-    }
-
-    /* ── Header ── */
-    .hero {
-      margin-bottom: 48px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero .eyebrow {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 12px;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .hero .meta {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-    .hero .meta span { color: var(--text-sec); }
-
-    /* ── Sections ── */
-    section {
-      margin-bottom: 48px;
-    }
-    h2 {
-      font-size: 20px;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    h2 .icon {
-      display: inline-block;
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      background: var(--green-dim);
-      border: 1px solid rgba(61,255,79,0.25);
-      text-align: center;
-      line-height: 28px;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    p { margin-bottom: 14px; color: var(--text); }
-    p:last-child { margin-bottom: 0; }
-
-    ul, ol {
-      padding-left: 20px;
-      margin-bottom: 14px;
-    }
-    li { margin-bottom: 6px; color: var(--text); }
-    li::marker { color: var(--green); }
-
-    /* ── Highlight card ── */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 20px 0;
-    }
-    .card.highlight {
-      border-color: rgba(61,255,79,0.3);
-      background: var(--green-dim);
-    }
-    .card.highlight p {
-      color: #D8FFD8;
-      font-weight: 500;
-    }
-
-    /* ── Third-party table ── */
-    .service-grid {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .service {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 16px 20px;
-    }
-    .service-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--cyan);
-      margin-bottom: 4px;
-    }
-    .service-desc {
-      font-size: 14px;
-      color: var(--text-sec);
-      margin: 0;
-    }
-    .service-cond {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin: 6px 0 0;
-      font-style: italic;
-    }
-
-    strong { color: #fff; font-weight: 700; }
-    a { color: var(--green); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ── Contact ── */
-    .contact-box {
-      background: var(--bg-raised);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .contact-box .label { font-size: 11px; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.1em; color: var(--text-muted); }
-    .contact-box .value { font-size: 16px; color: var(--text); }
-    .contact-box .value a { color: var(--green); }
-
-    /* ── Footer ── */
-    footer {
-      margin-top: 72px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--text-muted);
-      text-align: center;
-      line-height: 1.8;
-    }
-
-    @media (max-width: 500px) {
-      nav .inner { gap: 16px; }
-      .page { padding: 40px 16px 80px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — AirBike Pro</title>
+<meta name="description" content="AirBike Pro privacy policy. No accounts, no analytics, no advertising, no tracking. All workout data stays on your device.">
+<link rel="canonical" href="https://airbikepro.com/privacy-policy.html">
+<link rel="icon" href="assets/icon.png">
+<meta name="robots" content="index,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { brand: '#ff6a00', text1: '#1d1d1f', text2: '#6e6e73', fog: '#f5f5f7' },
+      fontFamily: { sans: ['-apple-system','BlinkMacSystemFont','"SF Pro Display"','"SF Pro Text"','"Helvetica Neue"','Helvetica','Arial','sans-serif'] },
+    },
+  },
+};
+</script>
+<style>
+  body { background:#ffffff; color:#1d1d1f; -webkit-font-smoothing:antialiased; }
+  .prose h2 { font-weight:600; font-size:1.4rem; letter-spacing:-0.01em; margin-top:2.75rem; margin-bottom:0.9rem; scroll-margin-top: 90px; }
+  .prose p, .prose li { color:#3a3a3d; font-size:1.02rem; line-height:1.75; }
+  .prose ul { margin-top:0.75rem; margin-bottom:0.75rem; padding-left:1.25rem; list-style:disc; }
+  .prose li { margin-bottom:0.5rem; }
+  .prose p { margin-bottom:1.1rem; }
+  .prose strong { color:#1d1d1f; font-weight:600; }
+  .prose a { color:#ff6a00; text-decoration:underline; text-underline-offset:2px; }
+</style>
 </head>
-<body>
+<body class="font-sans">
 
-<a name="top"></a>
-
-<nav>
-  <div class="inner">
-    <a class="brand" href="index.html">AirBike Pro</a>
-    <a href="#data-collected">Data</a>
-    <a href="#storage">Storage</a>
-    <a href="#third-party">Third-party</a>
-    <a href="#bluetooth">Bluetooth</a>
-    <a href="#photos">Photos</a>
-    <a href="#contact">Contact</a>
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-text1/10">
+  <div class="max-w-3xl mx-auto px-6 h-[52px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5 font-semibold tracking-tight">
+      <img src="assets/icon.png" alt="" class="w-7 h-7 rounded-[7px]">
+      <span>AirBike Pro</span>
+    </a>
+    <a href="index.html" class="text-sm text-text2 hover:text-text1 transition-colors">&larr; Back to site</a>
   </div>
 </nav>
 
-<div class="page">
+<main class="max-w-3xl mx-auto px-6 py-16">
+  <div class="text-brand font-semibold text-sm tracking-[0.1em] uppercase mb-3">Legal &amp; Privacy</div>
+  <h1 class="font-semibold tracking-tight text-4xl sm:text-5xl mb-4">Privacy Policy</h1>
+  <p class="text-text2 text-sm mb-10">
+    Application: AirBike Pro &nbsp;·&nbsp; Bundle ID: com.richiebolger.airbikepro &nbsp;·&nbsp;
+    Developer: Richie Bolger &nbsp;·&nbsp; Last updated: 26 June 2026
+  </p>
 
-  <div class="hero">
-    <div class="eyebrow">Legal &amp; Privacy</div>
-    <h1>Privacy Policy</h1>
-    <p class="meta">
-      Application: <span>AirBike Pro</span> &nbsp;|&nbsp;
-      Bundle ID: <span>com.richiebolger.airbikepro</span><br>
-      Developer: <span>Richie Bolger</span> &nbsp;|&nbsp;
-      Last updated: <span>26 June 2026</span>
-    </p>
-  </div>
-
-  <div class="card highlight">
-    <p>
+  <div class="card bg-fog rounded-2xl p-6 mb-12">
+    <p class="text-text1 text-[15px] leading-relaxed m-0">
       <strong>Short version:</strong> AirBike Pro does not collect, transmit, or sell any personal data.
-      All workout information stays on your device unless you explicitly choose to export it
-      to a service you control. There are no user accounts, no analytics, no advertising, and no tracking of any kind.
+      All workout information stays on your device unless you explicitly choose to export it to a service
+      you control. There are no user accounts, no analytics, no advertising, and no tracking of any kind.
     </p>
   </div>
 
-  <!-- 1. INTRODUCTION -->
-  <section id="introduction">
-    <h2><span class="icon">1</span> Introduction</h2>
+  <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-text2 mb-14 pb-8 border-b border-text1/10">
+    <a href="#data-collected" class="hover:text-brand transition-colors">Data</a>
+    <a href="#storage" class="hover:text-brand transition-colors">Storage</a>
+    <a href="#third-party" class="hover:text-brand transition-colors">Third-party</a>
+    <a href="#bluetooth" class="hover:text-brand transition-colors">Bluetooth</a>
+    <a href="#photos" class="hover:text-brand transition-colors">Photos</a>
+    <a href="#tracking" class="hover:text-brand transition-colors">Tracking</a>
+    <a href="#children" class="hover:text-brand transition-colors">Children</a>
+    <a href="#retention" class="hover:text-brand transition-colors">Retention</a>
+    <a href="#contact" class="hover:text-brand transition-colors">Contact</a>
+  </nav>
+
+  <article class="prose">
+    <h2 id="introduction">1. Introduction</h2>
     <p>
       AirBike Pro is an iOS and iPadOS application that connects to Rogue Echo Bikes, AssaultBikes,
       and any FTMS-compatible bike or treadmill via Bluetooth, and records workout metrics including
-      power output, cadence, speed, and optionally heart rate.
-      This Privacy Policy explains what information the app accesses, how it is used, and your choices
-      regarding that information.
+      power output, cadence, speed, and optionally heart rate. This Privacy Policy explains what
+      information the app accesses, how it is used, and your choices regarding that information.
     </p>
-    <p>
-      By using AirBike Pro you agree to the practices described in this policy.
-      If you do not agree, please do not use the application.
-    </p>
-  </section>
+    <p>By using AirBike Pro you agree to the practices described in this policy. If you do not agree, please do not use the application.</p>
 
-  <!-- 2. DATA COLLECTED -->
-  <section id="data-collected">
-    <h2><span class="icon">2</span> What Data Is Collected</h2>
+    <h2 id="data-collected">2. What Data Is Collected</h2>
     <p>
-      AirBike Pro collects <strong>no personal information</strong> automatically.
-      The app does not require you to create an account, provide your name, email address,
-      or any identifying information in order to function.
+      AirBike Pro collects <strong>no personal information</strong> automatically. The app does not
+      require you to create an account, provide your name, email address, or any identifying
+      information in order to function.
     </p>
     <p>The following data is recorded locally on your device during use:</p>
     <ul>
-      <li><strong>Workout metrics</strong> — power (watts), cadence (RPM), speed, elapsed time, distance, and calories, as broadcast by the Echo Bike over Bluetooth.</li>
+      <li><strong>Workout metrics</strong> — power (watts), cadence (RPM), speed, elapsed time, distance, and calories, as broadcast by the bike over Bluetooth.</li>
       <li><strong>Heart rate</strong> — if you optionally connect a Bluetooth heart rate monitor.</li>
       <li><strong>Rider profile data</strong> — name, FTP (functional threshold power), weight, resting and maximum heart rate, entered voluntarily by you in the Profile tab.</li>
       <li><strong>Derived training metrics</strong> — Training Stress Score (TSS), Normalized Power (NP), Intensity Factor (IF), Chronic Training Load (CTL), and VO2max estimates, all calculated locally on your device.</li>
     </ul>
-    <p>
-      None of this data is transmitted to the developer or any third party unless you
-      explicitly initiate an export action (see Section 4).
-    </p>
-  </section>
+    <p>None of this data is transmitted to the developer or any third party unless you explicitly initiate an export action (see Section 4).</p>
 
-  <!-- 3. STORAGE -->
-  <section id="storage">
-    <h2><span class="icon">3</span> Where Data Is Stored</h2>
+    <h2 id="storage">3. Where Data Is Stored</h2>
     <p>
       All workout history, rider profiles, and app settings are stored exclusively in
-      <strong>AsyncStorage on your local device</strong>. This storage is private to the application
-      and is not accessible to other apps or to Apple.
+      <strong> local device storage</strong>. This storage is private to the application and is not
+      accessible to other apps or to Apple.
     </p>
     <p>
       Data stored locally is subject to the standard iOS data protection provided by your device's
       passcode and encryption. The developer has no access to this data and no means of retrieving it.
     </p>
-    <p>
-      Deleting the app from your device permanently removes all locally stored data.
-    </p>
-  </section>
+    <p>Deleting the app from your device permanently removes all locally stored data.</p>
 
-  <!-- 4. THIRD-PARTY SERVICES -->
-  <section id="third-party">
-    <h2><span class="icon">4</span> Optional Third-Party Services</h2>
+    <h2 id="third-party">4. Optional Third-Party Services</h2>
     <p>
       AirBike Pro supports one optional integration with an external service.
-      <strong>It is not enabled by default.</strong>
-      It is activated only when you deliberately configure it in the Profile tab.
-      The service is governed by its own privacy policy, which you should review before connecting.
+      <strong> It is not enabled by default.</strong> It is activated only when you deliberately
+      configure it in the Profile tab. The service is governed by its own privacy policy, which you
+      should review before connecting.
     </p>
-
-    <div class="service-grid">
-
-      <div class="service">
-        <div class="service-name">Google Sheets (via Google Apps Script)</div>
-        <p class="service-desc">
-          You may provide a Google Apps Script web app URL to automatically log completed workouts
-          to a Google Sheet of your choice. When enabled, workout summary data (date, duration,
-          average power, TSS, etc.) is sent to the URL you supply. The data goes directly to
-          your own Google account — not to the developer.
-        </p>
-        <p class="service-cond">Activated only when you enter a script URL. Governed by
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
-      </div>
-
-    </div>
-
-    <div class="card">
-      <p>
-        No data is shared with any third-party service automatically or in the background.
-        Every upload or sync action is triggered manually by you.
-      </p>
-    </div>
-  </section>
-
-  <!-- 5. BLUETOOTH -->
-  <section id="bluetooth">
-    <h2><span class="icon">5</span> Bluetooth Usage</h2>
+    <p><strong>Google Sheets (via Google Apps Script)</strong></p>
     <p>
-      AirBike Pro uses Bluetooth Low Energy (BLE) to communicate with your Rogue Echo Bike
-      and, optionally, a Bluetooth heart rate monitor. The app implements the Fitness Machine Service
-      (FTMS) and Heart Rate Service (HRS) Bluetooth profiles to receive sensor data.
+      You may provide a Google Apps Script web app URL to automatically log completed workouts to a
+      Google Sheet of your choice. When enabled, workout summary data (date, duration, average power,
+      TSS, etc.) is sent to the URL you supply. The data goes directly to your own Google account —
+      not to the developer. Activated only when you enter a script URL. Governed by
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+    </p>
+    <p>No data is shared with any third-party service automatically or in the background. Every upload or sync action is triggered manually by you.</p>
+
+    <h2 id="bluetooth">5. Bluetooth Usage</h2>
+    <p>
+      AirBike Pro uses Bluetooth Low Energy (BLE) to communicate with your bike and, optionally, a
+      Bluetooth heart rate monitor. The app implements the Fitness Machine Service (FTMS) and Heart
+      Rate Service (HRS) Bluetooth profiles to receive sensor data.
     </p>
     <p>
-      Bluetooth access is used <strong>solely</strong> to receive workout metrics from your devices
-      in real time. The app does not scan for, identify, or record any Bluetooth devices other than
-      those you explicitly select and connect to within the app. Device identifiers are not stored
-      beyond the current session.
+      Bluetooth access is used <strong>solely</strong> to receive workout metrics from your devices in
+      real time. The app does not scan for, identify, or record any Bluetooth devices other than those
+      you explicitly select and connect to within the app. Device identifiers are not stored beyond
+      the current session.
     </p>
     <p>
-      iOS requires your permission before the app can use Bluetooth. You will be prompted to grant
-      this permission on first use. You can revoke Bluetooth permission at any time in
-      iOS Settings &rarr; Privacy &amp; Security &rarr; Bluetooth.
-      Revoking permission will prevent the app from connecting to the bike or heart rate monitor.
+      iOS requires your permission before the app can use Bluetooth. You will be prompted to grant this
+      permission on first use. You can revoke Bluetooth permission at any time in
+      iOS Settings → Privacy &amp; Security → Bluetooth. Revoking permission will prevent the app from
+      connecting to the bike or heart rate monitor.
     </p>
     <p>
-      The app requests background Bluetooth capability so that your workout continues recording
-      if you momentarily switch to another app during a session. No data is transmitted in the background.
+      The app requests background Bluetooth capability so that your workout continues recording if you
+      momentarily switch to another app during a session. No data is transmitted in the background.
     </p>
-  </section>
 
-  <!-- 6. PHOTO LIBRARY -->
-  <section id="photos">
-    <h2><span class="icon">6</span> Photo Library Access</h2>
+    <h2 id="photos">6. Photo Library Access</h2>
     <p>
-      AirBike Pro can generate a visual workout summary card (showing power, TSS, duration,
-      and other metrics) and save it to your device's Camera Roll so you can share it on social media
-      or elsewhere.
+      AirBike Pro can generate a visual workout summary card (showing power, TSS, duration, and other
+      metrics) and save it to your device's Camera Roll so you can share it on social media or
+      elsewhere.
     </p>
     <p>
       Photo library access is used <strong>only</strong> to save images that you have explicitly
-      requested to save. The app does not read, browse, or access any existing photos or media
-      on your device.
+      requested to save. The app does not read, browse, or access any existing photos or media on your
+      device.
     </p>
     <p>
-      iOS requires your permission before the app can add photos to your library. You will be
-      prompted when you first attempt to save a summary card. You can revoke this permission at any time
-      in iOS Settings &rarr; Privacy &amp; Security &rarr; Photos.
+      iOS requires your permission before the app can add photos to your library. You will be prompted
+      when you first attempt to save a summary card. You can revoke this permission at any time in
+      iOS Settings → Privacy &amp; Security → Photos.
     </p>
-  </section>
 
-  <!-- 7. ANALYTICS & ADVERTISING -->
-  <section id="analytics">
-    <h2><span class="icon">7</span> Analytics, Advertising &amp; Tracking</h2>
+    <h2 id="tracking">7. Analytics, Advertising &amp; Tracking</h2>
     <p>
-      AirBike Pro contains <strong>no analytics frameworks</strong>, no advertising SDKs,
-      no crash reporting services, and no third-party tracking of any kind.
+      AirBike Pro contains <strong>no analytics frameworks</strong>, no advertising SDKs, no crash
+      reporting services, and no third-party tracking of any kind.
     </p>
     <p>
-      The developer does not know how often you use the app, which features you use, what workouts
-      you complete, or any other behavioural information. This is by design.
+      The developer does not know how often you use the app, which features you use, what workouts you
+      complete, or any other behavioural information. This is by design.
     </p>
-  </section>
 
-  <!-- 8. NO SALE OF DATA -->
-  <section id="no-sale">
-    <h2><span class="icon">8</span> No Sale of Personal Data</h2>
+    <h2 id="sale">8. No Sale of Personal Data</h2>
     <p>
       The developer does not sell, rent, trade, or otherwise transfer any personal information to
       third parties. There is no personal information collected by the developer to sell.
     </p>
-  </section>
 
-  <!-- 9. CHILDREN -->
-  <section id="children">
-    <h2><span class="icon">9</span> Children's Privacy</h2>
+    <h2 id="children">9. Children's Privacy</h2>
     <p>
-      AirBike Pro is not directed at children under the age of 13. The app does not knowingly
-      collect any personal information from children. Because the app collects no personal data at all,
-      it poses no specific risk to younger users; however, parental guidance is recommended for users
+      AirBike Pro is not directed at children under the age of 13. The app does not knowingly collect
+      any personal information from children. Because the app collects no personal data at all, it
+      poses no specific risk to younger users; however, parental guidance is recommended for users
       under 13.
     </p>
-  </section>
 
-  <!-- 10. DATA RETENTION -->
-  <section id="retention">
-    <h2><span class="icon">10</span> Data Retention &amp; Deletion</h2>
+    <h2 id="retention">10. Data Retention &amp; Deletion</h2>
     <p>
-      All data is stored locally on your device for as long as the app is installed.
-      You can delete individual workouts from the History tab at any time.
-      Deleting all app data or uninstalling the app permanently removes all stored information.
+      All data is stored locally on your device for as long as the app is installed. You can delete
+      individual workouts from the History tab at any time. Deleting all app data or uninstalling the
+      app permanently removes all stored information.
     </p>
-    <p>
-      Because the developer holds no copies of your data on any server, there is nothing for
-      the developer to delete on your behalf.
-    </p>
-  </section>
+    <p>Because the developer holds no copies of your data on any server, there is nothing for the developer to delete on your behalf.</p>
 
-  <!-- 11. CHANGES -->
-  <section id="changes">
-    <h2><span class="icon">11</span> Changes to This Policy</h2>
+    <h2 id="changes">11. Changes to This Policy</h2>
     <p>
       If the developer makes material changes to this Privacy Policy, the updated policy will be
       published at this URL with a revised "Last updated" date. Continued use of the app after
       changes are posted constitutes acceptance of the updated policy.
     </p>
     <p>
-      The developer is committed to maintaining the privacy-first approach described here.
-      Any future feature that involves data leaving the device will be clearly disclosed and
-      will require explicit opt-in by the user.
+      The developer is committed to maintaining the privacy-first approach described here. Any future
+      feature that involves data leaving the device will be clearly disclosed and will require
+      explicit opt-in by the user.
     </p>
-  </section>
 
-  <!-- 12. CONTACT -->
-  <section id="contact">
-    <h2><span class="icon">12</span> Contact</h2>
-    <p>
-      If you have questions or concerns about this Privacy Policy or the data practices of
-      AirBike Pro, please contact:
-    </p>
-    <div class="contact-box">
-      <div>
-        <div class="label">Developer</div>
-        <div class="value">Richie Bolger</div>
-      </div>
-      <div>
-        <div class="label">Email</div>
-        <div class="value"><a href="mailto:info@airbikepro.com">info@airbikepro.com</a></div>
-      </div>
-      <div>
-        <div class="label">App</div>
-        <div class="value">AirBike Pro — com.richiebolger.airbikepro</div>
+    <h2 id="contact">12. Contact</h2>
+    <p>If you have questions or concerns about this Privacy Policy or the data practices of AirBike Pro, please contact:</p>
+    <div class="bg-fog rounded-2xl p-6 not-prose">
+      <div class="grid sm:grid-cols-2 gap-4 text-sm">
+        <div><span class="text-text2 block mb-0.5">Developer</span><span class="font-medium">Richie Bolger</span></div>
+        <div><span class="text-text2 block mb-0.5">Email</span><a href="mailto:info@airbikepro.com" class="font-medium text-brand">info@airbikepro.com</a></div>
+        <div><span class="text-text2 block mb-0.5">App</span><span class="font-medium">AirBike Pro · com.richiebolger.airbikepro</span></div>
+        <div><span class="text-text2 block mb-0.5">App Store</span><a href="https://apps.apple.com/app/airbike-pro/id6773389810" class="font-medium text-brand">View listing</a></div>
       </div>
     </div>
-  </section>
+  </article>
 
-</div><!-- /page -->
-
-<footer>
-  &copy; 2026 Richie Bolger &nbsp;&middot;&nbsp; AirBike Pro &nbsp;&middot;&nbsp;
-  Privacy Policy last updated 26 June 2026<br>
-  <a href="#top">Back to top &uarr;</a>
-</footer>
+  <div class="mt-16 pt-8 border-t border-text1/10 text-text2 text-xs flex flex-wrap justify-between gap-3">
+    <span>© 2026 Richie Bolger · AirBike Pro · Privacy Policy last updated 26 June 2026</span>
+    <a href="#top" class="hover:text-text1 transition-colors">Back to top ↑</a>
+  </div>
+</main>
 
 </body>
 </html>
